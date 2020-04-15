@@ -1,0 +1,22 @@
+{
+  "name": "@serverless/express-knative",
+  "version": "0.1.0",
+  "main": "./serverless.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "lint": "eslint . --fix --cache"
+  },
+  "author": "Serverless, Inc.",
+  "license": "Apache",
+  "dependencies": {
+    "@serverless/knative-serving": "github:serverless-components/knative-serving#master",
+    "@serverless/kubernetes-configmap": "github:serverless-components/kubernetes-configmap#master",
+    "@serverless/kubernetes-namespace": "github:serverless-components/kubernetes-namespace#master",
+    "@serverless/kubernetes-pod": "github:serverless-components/kubernetes-pod#master",
+    "@serverless/kubernetes-pvc": "github:serverless-components/kubernetes-pvc#master",
+    "globby": "^11.0.0",
+    "tar": "^6.0.1"
+  }
+}
