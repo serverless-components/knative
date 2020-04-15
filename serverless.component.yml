@@ -1,0 +1,10 @@
+name: express-knative
+version: 0.1.0
+author: pmuens
+org: pmuens
+description: Deploys a serverless Express.js application onto Knative.
+keywords: kubernetes, knative, serverless, express
+repo: https://github.com/serverless-components/express-knative
+readme: ''
+license: MIT
+main: ./src
