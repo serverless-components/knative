@@ -6,4 +6,3 @@ component: express-knative
 
 inputs:
   src: ./src
-  # namespace: test # Optional Kubernetes namespace
