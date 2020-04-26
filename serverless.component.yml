@@ -1,5 +1,5 @@
 name: express-knative
-version: 0.0.2
+version: 0.0.3
 author: pmuens
 org: pmuens
 description: Deploys a serverless Express.js application onto Knative.
