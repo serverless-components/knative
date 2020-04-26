@@ -33,6 +33,26 @@ class Express extends Component {
       ...this.state
     }
 
+    // 0. Check is user has permissions to access the cluster
+    // TODO: We might want to use another Component / Kubernetes API call to check the auth setup
+    const K8S_ENDPOINT = this.credentials.kubernetes.endpoint
+    const K8S_PORT = this.credentials.kubernetes.port
+    console.log(`Authenticating with K8S cluster "${K8S_ENDPOINT}:${K8S_PORT}"...`)
+    try {
+      await readKubernetesPod.call(this, { namespace: 'default', name: '!nv4l1d-n4m3' })
+    } catch (error) {
+      if (!Object.keys(error).includes('response')) {
+        const msg = [
+          'It seems like your Kubernetes config is incorrect. ',
+          ' Please check the documentation for more information.',
+          '\n\n',
+          error.message
+        ].join('')
+        throw new Error(msg)
+      }
+    }
+    console.log(`Successfully authenticated with K8S cluster "${K8S_ENDPOINT}:${K8S_PORT}"...`)
+
     // 1. Ensure K8S Namespace
     if (!config.namespace) {
       console.log('Deploying K8S Namespace...')
@@ -55,7 +75,7 @@ class Express extends Component {
     })
     const configMapName = cm.name
 
-    // 3. Ensure K8S PersistentVolumeClaim which
+    // 3. Ensure K8S PersistentVolumeClaim
     console.log('Ensuring K8S PersistentVolumeClaim...')
     const pvc = await deployKubernetesPVC.call(this, {
       namespace,
