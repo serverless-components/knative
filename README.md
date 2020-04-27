@@ -1,6 +1,6 @@
-# Express - Knative
+[![Serverless Framework Express Knative](https://s3.amazonaws.com/assets.github.serverless/components/readme-serverless-framework-knative-express.png)](http://serverless.com)
 
-Deploy and manage express.js applications on serverless infrastructure easily, cheaply and scale massively.
+Deploy and manage express.js applications on serverless Knative infrastructure easily, cheaply and scale massively.
 
 ## Prerequisites
 
