@@ -2,9 +2,13 @@
 
 Deploy and manage express.js applications on serverless Knative infrastructure easily, cheaply and scale massively.
 
+### [Register For A Free Demo](https://serverless-knative.com)
+
+[Sign up here](https://serverless-knative.com) to see the Serverless Framework's easy experience with Knative and Red Hat's OpenShift.
+
 ## Prerequisites
 
-### Kuberentes
+### Kubernetes
 
 [Knative](https://knative.dev) should be installed on your Kubernetes cluster.
 
