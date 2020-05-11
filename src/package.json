@@ -14,6 +14,8 @@
     "@serverless/knative-serving": "github:serverless-components/knative-serving#master",
     "@serverless/kubernetes-namespace": "github:serverless-components/kubernetes-namespace#master",
     "@serverless/kubernetes-pod": "github:serverless-components/kubernetes-pod#master",
+    "@kubernetes/client-node": "^0.11.2",
+    "@serverless/core": "^1.1.2",
     "globby": "^11.0.0",
     "tar": "^6.0.1"
   }

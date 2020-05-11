@@ -5,8 +5,9 @@ const {
   readKubernetesPod,
   removeKubernetesNamespace,
   ensureOpenShiftBuild,
-  runOpenShiftBuild
-} = require('./knative')
+  runOpenShiftBuild,
+  openShiftBuild,
+} = require('./openshift')
 const util = require('util')
 
 function generateId() {
@@ -49,7 +50,9 @@ class Express extends Component {
         throw new Error(msg)
       }
     }
-    console.log(`Successfully authenticated with OpenShift cluster "${K8S_ENDPOINT}:${K8S_PORT}"...`)
+    console.log(
+      `Successfully authenticated with OpenShift cluster "${K8S_ENDPOINT}:${K8S_PORT}"...`
+    )
 
     // 1. Ensure K8S Namespace
     if (!config.namespace) {
@@ -65,13 +68,10 @@ class Express extends Component {
     // 2. Ensure build config
     const buildName = `${config.prefix}-build-config`
     console.log('Ensure OpenShift S2I build')
-    const err = await ensureOpenShiftBuild.call(this, {
+    openShiftBuild.call(this, {
       name: buildName,
       namespace: namespace
     })
-    if (err) {
-      throw new Error('Error while ensuring an OpenShift S2I build: ' + util.inspect(err))
-    }
     this.state = config // Saving state...
 
     // 3. Start S2I build
