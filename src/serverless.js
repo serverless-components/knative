@@ -7,6 +7,7 @@ const {
   ensureOpenShiftBuild,
   runOpenShiftBuild
 } = require('./knative')
+const util = require('util')
 
 function generateId() {
   return Math.random()
@@ -69,18 +70,21 @@ class Express extends Component {
       namespace: namespace
     })
     if (err) {
-      throw new Error('Error while ensuring an OpenShift S2I build: ' + err)
+      throw new Error('Error while ensuring an OpenShift S2I build: ' + util.inspect(err))
     }
     this.state = config // Saving state...
 
     // 3. Start S2I build
     console.log('Start OpenShift S2I build')
     const srcDirPath = await this.unzip(inputs.src)
-    await runOpenShiftBuild.call(this, {
+    const errBuild = await runOpenShiftBuild.call(this, {
       name: buildName,
       namespace: namespace,
       inputDir: srcDirPath
     })
+    if (errBuild) {
+      throw new Error('Error while running an OpenShift S2I build: ' + util.inspect(err))
+    }
     this.state = config // Saving state...
 
     // 4. Deploy Knative Serving service
