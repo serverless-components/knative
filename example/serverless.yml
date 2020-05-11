@@ -2,7 +2,7 @@ org: jdoe
 app: my-app
 name: my-app
 
-component: express-knative
+component: express-openshift
 
 inputs:
   src: ./src
