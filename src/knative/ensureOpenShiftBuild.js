@@ -1,4 +1,4 @@
-const { exec } = require('child_process').exec
+const { exec } = require('child_process')
 
 async function ensureOpenShiftBuild(config) {
   // Check for a build config of the given name by running oc

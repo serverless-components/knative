@@ -1,5 +1,5 @@
 {
-  "name": "@serverless/express-knative",
+  "name": "@serverless/express-openshift",
   "version": "0.1.0",
   "main": "./serverless.js",
   "publishConfig": {
