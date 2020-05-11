@@ -4,9 +4,8 @@ const {
   deployKubernetesNamespace,
   readKubernetesPod,
   removeKubernetesNamespace,
-  ensureOpenShiftBuild,
   runOpenShiftBuild,
-  openShiftBuild,
+  openShiftBuild
 } = require('./openshift')
 const util = require('util')
 
