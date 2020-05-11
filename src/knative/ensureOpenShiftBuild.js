@@ -12,7 +12,7 @@ async function ensureOpenShiftBuild(config) {
       if (err) {
         console.error('error: ' + err)
         console.error(stderr)
-        return
+        return err
       }
       console.log(stdout)
       return err
