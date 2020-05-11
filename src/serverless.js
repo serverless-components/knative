@@ -52,7 +52,7 @@ class Express extends Component {
 
     // 1. Ensure K8S Namespace
     if (!config.namespace) {
-      console.log('Deploying K8S Namespace...')
+      console.log('Deploying OpenShift Namespace...')
       const ns = await deployKubernetesNamespace.call(this, {
         name: config.prefix
       })
@@ -62,10 +62,11 @@ class Express extends Component {
     this.state = config // Saving state...
 
     // 2. Ensure build config
-    const { buildName } = `${config.prefix}-build-config`
+    const buildName = `${config.prefix}-build-config`
     console.log('Ensure OpenShift S2I build')
     await ensureOpenShiftBuild.call(this, {
-      name: buildName
+      name: buildName,
+      namespace: namespace
     })
     this.state = config // Saving state...
 
@@ -74,6 +75,7 @@ class Express extends Component {
     const srcDirPath = await this.unzip(inputs.src)
     await runOpenShiftBuild.call(this, {
       name: buildName,
+      namespace: namespace,
       inputDir: srcDirPath
     })
     this.state = config // Saving state...
