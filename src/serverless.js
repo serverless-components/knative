@@ -64,10 +64,13 @@ class Express extends Component {
     // 2. Ensure build config
     const buildName = `${config.prefix}-build-config`
     console.log('Ensure OpenShift S2I build')
-    await ensureOpenShiftBuild.call(this, {
+    const err = await ensureOpenShiftBuild.call(this, {
       name: buildName,
       namespace: namespace
     })
+    if (err) {
+      throw new Error('Error while ensuring an OpenShift S2I build: ' + err)
+    }
     this.state = config // Saving state...
 
     // 3. Start S2I build

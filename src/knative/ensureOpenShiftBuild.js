@@ -6,7 +6,7 @@ async function ensureOpenShiftBuild(config) {
   // For now we just calling "new-build" but ignore any error
   console.log(util.inspect(config))
   console.log(util.inspect(process.env))
-  await exec(
+  return exec(
     `oc new-build --namespace "${config.namespace}" --binary=true --strategy docker --name "${config.name}"`,
     (err, stdout, stderr) => {
       if (err) {
@@ -15,6 +15,7 @@ async function ensureOpenShiftBuild(config) {
         return
       }
       console.log(stdout)
+      return err
     }
   )
 }
