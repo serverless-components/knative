@@ -4,7 +4,6 @@ const {
   deployKubernetesNamespace,
   readKubernetesPod,
   removeKubernetesNamespace,
-  runOpenShiftBuild,
   openShiftBuild
 } = require('./openshift')
 
@@ -63,22 +62,18 @@ class Express extends Component {
     const { namespace } = config
     this.state = config // Saving state...
 
-    // 2. Ensure build config
-    const buildName = `${config.prefix}-build-config`
-    console.log('Ensure OpenShift S2I build')
-    openShiftBuild.call(this, {
-      name: buildName,
-      namespace: namespace
-    })
-    this.state = config // Saving state...
-
-    // 3. Start S2I build
-    console.log('Start OpenShift S2I build')
+    // 2. Run S2I build config
     const srcDirPath = await this.unzip(inputs.src)
-    await runOpenShiftBuild.call(this, {
-      name: buildName,
+    console.log('Run OpenShift S2I build')
+    await openShiftBuild.call(this, {
+      name: appName,
       namespace: namespace,
-      inputDir: srcDirPath
+      projectLocation: srcDirPath,
+      openShiftAuth: {
+        url: K8S_ENDPOINT + ':' + K8S_PORT,
+        token: this.credentials.kubernetes.serviceAccountToken,
+        skipTLSVerify: true
+      }
     })
     this.state = config // Saving state...
 
@@ -89,7 +84,7 @@ class Express extends Component {
       namespace,
       name: knativeServingName,
       registryAddress: 'image-registry.openshift-image-registry.svc:5000',
-      repository: namespace,
+      repository: namespace + '/' + appName,
       tag: 'latest'
     })
     config.serviceUrl = knative.serviceUrl

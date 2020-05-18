@@ -1,9 +1,7 @@
 // `deploy`
 const deployKnativeServing = require('./deployKnativeServing')
 const deployKubernetesNamespace = require('./deployKubernetesNamespace')
-const ensureOpenShiftBuild = require('./ensureOpenShiftBuild')
 const openShiftBuild = require('./openShiftBuild')
-const runOpenShiftBuild = require('./runOpenShiftBuild')
 // `read`
 const readKubernetesPod = require('./readKubernetesPod')
 // `remove`
@@ -14,7 +12,5 @@ module.exports = {
   deployKubernetesNamespace,
   readKubernetesPod,
   removeKubernetesNamespace,
-  ensureOpenShiftBuild,
-  runOpenShiftBuild,
   openShiftBuild
 }
