@@ -1,5 +1,5 @@
 {
-  "name": "@serverless/express-knative",
+  "name": "@serverless/knative",
   "version": "0.1.0",
   "main": "./serverless.js",
   "publishConfig": {
@@ -16,7 +16,10 @@
     "@serverless/kubernetes-namespace": "github:serverless-components/kubernetes-namespace#master",
     "@serverless/kubernetes-pod": "github:serverless-components/kubernetes-pod#master",
     "@serverless/kubernetes-pvc": "github:serverless-components/kubernetes-pvc#master",
+    "nodeshift": "^6.1.0",
+    "openshift-rest-client": "^4.1.0",
     "globby": "^11.0.0",
-    "tar": "^6.0.1"
+    "tar": "^6.0.1",
+    "write-yaml": "^1.0.0"
   }
 }

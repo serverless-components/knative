@@ -1,9 +1,9 @@
-name: express-knative
-version: 0.0.3
-author: pmuens
-org: pmuens
-description: Deploys a serverless Express.js application onto Knative.
-keywords: kubernetes, knative, serverless, express
+name: knative
+version: 0.0.4
+author: rhuss
+org: rhuss
+description: Deploys a serverless Express.js application onto Knative or OpenShift Serverless.
+keywords: kubernetes, knative, serverless, express, openshift
 repo: https://github.com/serverless-components/express-knative
 readme: ''
 license: MIT
