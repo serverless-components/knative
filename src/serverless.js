@@ -7,7 +7,7 @@ class Knative extends Component {
     const config = this.getConfig(inputs)
 
     const isOpenShift = await openshift.isOpenShift.call(this)
-    if (isOpenShift && 0) {
+    if (isOpenShift) {
       return openshift.deploy.call(this, config)
     }
 
