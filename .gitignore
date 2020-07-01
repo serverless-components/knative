@@ -22,3 +22,6 @@ package-lock.json
 test
 tmp/
 !examples/express/.env
+!examples/go/.env
+!examples/quarkus/.env
+!examples/cgi/.env
