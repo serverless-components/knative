@@ -1,0 +1,11 @@
+# Serverless.com user
+org: jdoe
+# App name
+app: hello-cgi
+name: hello-cgi
+
+# Knative/OpenShift Serverless component
+component: knative
+
+inputs:
+  src: ./src
