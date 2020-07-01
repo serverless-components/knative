@@ -21,4 +21,7 @@ env.js
 package-lock.json
 test
 tmp/
-!example/.env
+!examples/express/.env
+!examples/go/.env
+!examples/quarkus/.env
+!examples/cgi/.env

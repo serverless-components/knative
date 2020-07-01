@@ -1,0 +1,7 @@
+{
+  "name": "hello-quarkus",
+  "version": "0.1.0",
+  "description": "Simple hello world sample for Quarkus",
+  "author": "quarkus team",
+  "license": "Apache-2.0"
+}

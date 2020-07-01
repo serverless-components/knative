@@ -1,0 +1,7 @@
+{
+  "name": "hello-go",
+  "version": "0.1.0",
+  "description": "Simple hello world sample written in Go",
+  "author": "rhuss",
+  "license": "Apache-2.0"
+}

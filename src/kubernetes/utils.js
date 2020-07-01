@@ -3,7 +3,7 @@ const os = require('os')
 const path = require('path')
 const tar = require('tar')
 const globby = require('globby')
-const readKubernetesPod = require('./knative/readKubernetesPod')
+const readKubernetesPod = require('./readKubernetesPod')
 
 function generateId() {
   return Math.random()

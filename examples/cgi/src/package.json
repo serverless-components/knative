@@ -1,0 +1,7 @@
+{
+  "name": "hello-cgi",
+  "version": "0.1.0",
+  "description": "Simple hello world sample written as CGI script",
+  "author": "rhuss",
+  "license": "Apache-2.0"
+}

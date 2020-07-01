@@ -1,8 +1,0 @@
-org: jdoe
-app: my-app
-name: my-app
-
-component: express-knative
-
-inputs:
-  src: ./src
