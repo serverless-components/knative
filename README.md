@@ -43,7 +43,9 @@ Support for more container registries is on our Roadmap.
 
 ### OpenShift Mode
 
-For the [OpenShift](https://www.openshift.com/) there are no requirements except to have access the OpenShift cluster.
+For the [OpenShift](https://www.openshift.com/) mode you must have [OpenShift Serverless](https://www.openshift.com/learn/topics/serverless) installed on the cluster. 
+This can be easily achieved with help of the Operator Catalog. 
+Otherwise, there are no requirements except of course that you have access the OpenShift cluster.
 Authentication is done via a token that you can obtain with `oc whoami --service-token` while being connected to the cluster.  
 
 ## Configuration
