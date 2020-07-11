@@ -55,9 +55,9 @@ The credentials needed for connection to the cluster and possibly to Docker Hub 
 | Variable | Kubernetes Mode | OpenShift Mode |
 | -------- | -------- | -------- |
 | `KUBERNETES_ENDPOINT`   | The API Endpoint URL to the Kubernetes cluster, without port   | Same as for Kubernetes but for connecting to an OpenShift Cluster   |
-| `KUBERNETES_PORT`   | Port of the API Endpoint   | Port of the API endpoint   |
+| `KUBERNETES_PORT`   | Port of the API endpoint   | Port of the API endpoint   |
 | `KUBERNETES_SERVICE_ACCOUNT_TOKEN`   | Token of the Service Account under which the deployment should be done   | The OpenShift access token which can be obtained with `oc whoami --service-token`   |
-| `KUBERNETES_SKIP_TLS_VERIFY`   | Whether to skip TLS server certificate verification  | Same  |
+| `KUBERNETES_SKIP_TLS_VERIFY`   | Whether to skip TLS server certificate verification  | Whether to skip TLS server certificate verification  |
 | `DOCKER_USERNAME`   | User name for connecting to Docker Hub   | Not used   |
 | `DOCKER_PASSWORD`   | User password for connecting to Docker Hub  | Not used   |
 
