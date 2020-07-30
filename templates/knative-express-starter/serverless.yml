@@ -1,5 +1,5 @@
 name: knative-express-starter
-component: knative@dev
+component: knative
 org: redhat
 description: Deploys a serverless knative express app
 keywords: serverless, knative, express

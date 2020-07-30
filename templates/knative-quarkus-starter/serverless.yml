@@ -1,6 +1,10 @@
 name: knative-quarkus-starter
 component: knative
 org: redhat
+description: Deploys a serverless knative quarkus app
+keywords: serverless, knative, quarkus, java
+repo: https://github.com/serverless-components/knative
+license: MIT
 
 inputs:
   src: ./src

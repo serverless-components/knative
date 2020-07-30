@@ -1,6 +1,10 @@
 name: knative-cgi-starter
 component: knative
 org: redhat
+description: Deploys a serverless knative CGI app
+keywords: serverless, knative, cgi
+repo: https://github.com/serverless-components/knative
+license: MIT
 
 inputs:
   src: ./src
