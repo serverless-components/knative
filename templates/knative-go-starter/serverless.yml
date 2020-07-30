@@ -1,0 +1,10 @@
+name: knative-go-starter
+component: knative@dev
+org: redhat
+description: Deploys a serverless knative go app
+keywords: serverless, knative, go
+repo: https://github.com/serverless-components/knative
+license: MIT
+
+inputs:
+  src: ./src

@@ -1,0 +1,6 @@
+name: knative-quarkus-starter
+component: knative
+org: redhat
+
+inputs:
+  src: ./src
