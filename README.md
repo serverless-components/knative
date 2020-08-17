@@ -1,4 +1,4 @@
-# Knative - Serverless Framework Component
+![serverless framework knative component](https://s3.amazonaws.com/public.serverless.com/component_knative/readme-serverless-framework-knative.png)
 
 Deploy and manage containerized applications on serverless Knative infrastructure easily, cheaply and scale massively.
 This component supports two ways of building container images out of your source code:
