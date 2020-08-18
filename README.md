@@ -46,7 +46,7 @@ Support for more container registries is on our Roadmap.
 For the [OpenShift](https://www.openshift.com/) mode, you must have [OpenShift Serverless](https://www.openshift.com/learn/topics/serverless) installed on the cluster. 
 OpenShift Serverless can be easily installed with the help of the Operator Catalog. 
 Otherwise, there are no requirements except of course that you have access to the OpenShift cluster.
-Authentication is done via a token that you can obtain with `oc whoami --service-token` while being connected to the cluster.  
+Authentication is done via a token that you can obtain with `oc whoami --show-token` while being connected to the cluster.  
 
 ## Configuration
 
@@ -56,7 +56,7 @@ The credentials needed for connection to the cluster and possibly to Docker Hub 
 | -------- | -------- | -------- |
 | `KUBERNETES_ENDPOINT`   | The API Endpoint URL to the Kubernetes cluster, without port   | Same as for Kubernetes but for connecting to an OpenShift Cluster   |
 | `KUBERNETES_PORT`   | Port of the API endpoint   | Port of the API endpoint   |
-| `KUBERNETES_SERVICE_ACCOUNT_TOKEN`   | Token of the Service Account under which the deployment should be done   | The OpenShift access token which can be obtained with `oc whoami --service-token`   |
+| `KUBERNETES_SERVICE_ACCOUNT_TOKEN`   | Token of the Service Account under which the deployment should be done   | The OpenShift access token which can be obtained with `oc whoami --show-token`   |
 | `KUBERNETES_SKIP_TLS_VERIFY`   | Whether to skip TLS server certificate verification  | Whether to skip TLS server certificate verification  |
 | `DOCKER_USERNAME`   | User name for connecting to Docker Hub   | Not used   |
 | `DOCKER_PASSWORD`   | User password for connecting to Docker Hub  | Not used   |
